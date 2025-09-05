@@ -1,9 +1,23 @@
+/// price difference processing is used to execute when price differences are found.
+type PriceDiffHandle = fn(dyn BasePrice);
+
 /// Price processing module
 pub struct Price {}
 
-impl Price {}
+impl Price {
+    /// price difference discovery
+    fn find_price_diff(self, price_diff_handle: Option<PriceDiffHandle>) {
+        let p = BinancePrice::new();
+        match price_diff_handle {
+            Some(handle) => {
+                handle(p);
+            }
+            None => todo!(),
+        }
+    }
+}
 
-trait PriceTrait {
+trait BasePrice {
     fn new() -> Self;
     fn get_price();
     fn test() {}
@@ -12,7 +26,7 @@ trait PriceTrait {
 /// binance price
 struct BinancePrice {}
 
-impl PriceTrait for BinancePrice {
+impl BasePrice for BinancePrice {
     fn new() -> Self {
         Self {}
     }
@@ -24,7 +38,7 @@ impl PriceTrait for BinancePrice {
 /// hyperliquid price
 struct HyperliquidPrice {}
 
-impl PriceTrait for HyperliquidPrice {
+impl BasePrice for HyperliquidPrice {
     fn new() -> Self {
         Self {}
     }
@@ -36,7 +50,7 @@ impl PriceTrait for HyperliquidPrice {
 /// bybit price
 struct BybitPrice {}
 
-impl PriceTrait for BybitPrice {
+impl BasePrice for BybitPrice {
     fn new() -> Self {
         Self {}
     }
@@ -48,7 +62,7 @@ impl PriceTrait for BybitPrice {
 /// upbit price
 struct UpbitPrice {}
 
-impl PriceTrait for UpbitPrice {
+impl BasePrice for UpbitPrice {
     fn new() -> Self {
         Self {}
     }
@@ -60,7 +74,7 @@ impl PriceTrait for UpbitPrice {
 /// okx price
 struct OKXPrice {}
 
-impl PriceTrait for OKXPrice {
+impl BasePrice for OKXPrice {
     fn new() -> Self {
         Self {}
     }
@@ -72,7 +86,7 @@ impl PriceTrait for OKXPrice {
 /// bitget price
 struct BitgetPrice {}
 
-impl PriceTrait for BitgetPrice {
+impl BasePrice for BitgetPrice {
     fn new() -> Self {
         Self {}
     }
@@ -84,7 +98,7 @@ impl PriceTrait for BitgetPrice {
 /// mexc price
 struct MexcPrice {}
 
-impl PriceTrait for MexcPrice {
+impl BasePrice for MexcPrice {
     fn new() -> Self {
         Self {}
     }
@@ -96,7 +110,7 @@ impl PriceTrait for MexcPrice {
 /// gate price
 struct GatePrice {}
 
-impl PriceTrait for GatePrice {
+impl BasePrice for GatePrice {
     fn new() -> Self {
         Self {}
     }
@@ -108,7 +122,7 @@ impl PriceTrait for GatePrice {
 /// coinbase price
 struct CoinbasePrice {}
 
-impl PriceTrait for CoinbasePrice {
+impl BasePrice for CoinbasePrice {
     fn new() -> Self {
         Self {}
     }
@@ -120,7 +134,7 @@ impl PriceTrait for CoinbasePrice {
 /// kraken price
 struct KrakenPrice {}
 
-impl PriceTrait for KrakenPrice {
+impl BasePrice for KrakenPrice {
     fn new() -> Self {
         Self {}
     }
@@ -132,7 +146,7 @@ impl PriceTrait for KrakenPrice {
 /// kucoin price
 struct KucoinPrice {}
 
-impl PriceTrait for KucoinPrice {
+impl BasePrice for KucoinPrice {
     fn new() -> Self {
         Self {}
     }
@@ -144,7 +158,7 @@ impl PriceTrait for KucoinPrice {
 /// htx price
 struct HTXPrice {}
 
-impl PriceTrait for HTXPrice {
+impl BasePrice for HTXPrice {
     fn new() -> Self {
         Self {}
     }
@@ -156,7 +170,7 @@ impl PriceTrait for HTXPrice {
 /// crypto price
 struct CryptoPrice {}
 
-impl PriceTrait for CryptoPrice {
+impl BasePrice for CryptoPrice {
     fn new() -> Self {
         Self {}
     }
