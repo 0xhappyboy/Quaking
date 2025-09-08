@@ -1,2 +1,2 @@
 # <center>💰 arbitrage </center>  
-A development framework and application focused on arbitrage.
+Focus on the development framework of financial arbitrage trading.
