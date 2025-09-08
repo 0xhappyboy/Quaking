@@ -533,6 +533,8 @@ version = "0.1.0"
 dependencies = [
  "alloy",
  "env_logger 0.11.8",
+ "ethers",
+ "ethers-solc",
  "hyperliquid_rust_sdk",
  "log",
  "tokio",

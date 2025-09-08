@@ -12,13 +12,13 @@ impl Arbitrage {
     pub async fn init() -> Self {
         Self::new().await
     }
-    pub async fn init_for_json() -> Self {
+    pub async fn init_by_json() -> Self {
         Self::new().await
     }
-    pub async fn init_for_json_file() -> Self {
+    pub async fn init_by_json_file() -> Self {
         Self::new().await
     }
-    pub async fn init_for_xml_file() -> Self {
+    pub async fn init_by__xml_file() -> Self {
         Self::new().await
     }
     pub async fn new() -> Self {

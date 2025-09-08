@@ -42,7 +42,7 @@ impl Hyperliquid {
             client: InfoClient::new(None, Some(BaseUrl::Testnet)).await.unwrap(),
         }
     }
-    fn get_(&self) {
+    fn get_token_price(&self) {
         todo!()
     }
 }
