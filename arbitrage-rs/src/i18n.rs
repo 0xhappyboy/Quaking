@@ -1,1 +1,1 @@
-/// i18n settings
+// i18n settings

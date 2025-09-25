@@ -1,2 +1,2 @@
 # <center>💰 arbitrage </center>  
-Focus on the development framework of financial arbitrage trading.
+Comprehensive development framework for financial arbitrage trading and quantitative trading.
