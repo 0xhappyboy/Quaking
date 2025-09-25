@@ -1,0 +1,12 @@
+pub mod binance;
+pub mod bitget;
+pub mod bybit;
+pub mod coinbase;
+pub mod crypto;
+pub mod gate;
+pub mod htx;
+pub mod kraken;
+pub mod kucoin;
+pub mod mexc;
+pub mod okx;
+pub mod upbit;

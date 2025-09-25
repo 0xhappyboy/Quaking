@@ -2,7 +2,7 @@ use core::sync;
 
 use crate::{
     arbitrage::{self, Arbitrage},
-    crypto::{global::TradeTypeEnum, ports::Port},
+    crypto::{global::TradeTypeEnum, ports::port::Port},
 };
 
 /// list of ports with price differences.
