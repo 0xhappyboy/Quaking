@@ -14,7 +14,21 @@ use crate::crypto::network::abi::gas::latestAnswerCall;
 const ETH_USD_FEED: Address = address!("5f4eC3Df9cbd43714FE2740f5E3616155c5b8419");
 const ETH_USD_FEED_DECIMALS: u8 = 8;
 const ETH_DECIMALS: u32 = 18;
-const EVM_RPC: &str = "https://reth-ethereum.ithaca.xyz/rpc";
+const ETHEREUM_RPC: &str = "https://reth-ethereum.ithaca.xyz/rpc";
+const BASE_RPC: &str = "";
+const ARB_RPC: &str = "";
+const BSC_RPC: &str = "";
+const HYPEREVM_RPC: &str = "";
+const PLASMA_RPC: &str = "";
+
+pub enum EvmNetworkType {
+    Ethereum,
+    Arb,
+    Bsc,
+    Base,
+    HyperEVM,
+    Plasma,
+}
 
 #[derive(Clone)]
 pub struct Evm {
@@ -35,11 +49,37 @@ pub struct Evm {
         alloy::providers::RootProvider,
     >,
 }
+
 impl Evm {
-    pub async fn new() -> Self {
-        let provider = ProviderBuilder::new().connect(EVM_RPC).await.unwrap();
-        Self { provider: provider }
+    pub async fn new(evm_network_type: EvmNetworkType) -> Self {
+        match evm_network_type {
+            EvmNetworkType::Ethereum => {
+                let provider = ProviderBuilder::new().connect(ETHEREUM_RPC).await.unwrap();
+                Self { provider: provider }
+            }
+            EvmNetworkType::Arb => {
+                let provider = ProviderBuilder::new().connect(ARB_RPC).await.unwrap();
+                Self { provider: provider }
+            }
+            EvmNetworkType::Bsc => {
+                let provider = ProviderBuilder::new().connect(BSC_RPC).await.unwrap();
+                Self { provider: provider }
+            }
+            EvmNetworkType::Base => {
+                let provider = ProviderBuilder::new().connect(BASE_RPC).await.unwrap();
+                Self { provider: provider }
+            }
+            EvmNetworkType::HyperEVM => {
+                let provider = ProviderBuilder::new().connect(HYPEREVM_RPC).await.unwrap();
+                Self { provider: provider }
+            }
+            EvmNetworkType::Plasma => {
+                let provider = ProviderBuilder::new().connect(PLASMA_RPC).await.unwrap();
+                Self { provider: provider }
+            }
+        }
     }
+
     pub async fn get_gas_gwei(&self) -> f64 {
         let wei_per_gas = self.provider.get_gas_price().await.unwrap();
         let gwei = format_units(wei_per_gas, "gwei")

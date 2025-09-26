@@ -33,7 +33,7 @@ impl Arbitrage {
         Self {
             binance_port: None,
             hyperliquid_port: Some(Hyperliquid::new().await),
-            uniswap_port: Some(UniSwap::new(net.evm.clone())),
+            uniswap_port: Some(UniSwap::new(net.ethereum.clone())),
             network: Some(net),
         }
     }
