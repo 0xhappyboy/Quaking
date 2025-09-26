@@ -1,4 +1,4 @@
-use crate::crypto::{network::evm::Evm, ports::port::Port};
+use crate::crypto::{network::evm::Evm, ports::port::Port, types::Symbol};
 
 /// uniswap
 pub struct UniSwap {
@@ -14,15 +14,23 @@ impl UniSwap {
     }
 }
 impl Port for UniSwap {
-    fn get_price(&self) {
+    fn get_price(&self, symbol: Symbol) -> f64 {
         todo!()
     }
 
-    fn buy(&self) {
+    fn spot_buy(&self) {
         todo!()
     }
 
-    fn sell(&self) {
+    fn spot_sell(&self) {
+        todo!()
+    }
+
+    fn futures_long(&self) {
+        todo!()
+    }
+
+    fn futures_short(&self) {
         todo!()
     }
 }

@@ -1,4 +1,4 @@
-use crate::crypto::ports::port::Port;
+use crate::crypto::{ports::port::Port, types::Symbol};
 
 /// upbit
 struct Upbit {}
@@ -9,15 +9,23 @@ impl Upbit {
     }
 }
 impl Port for Upbit {
-    fn get_price(&self) {
+    fn get_price(&self, symbol: Symbol) -> f64 {
         todo!()
     }
 
-    fn buy(&self) {
+    fn spot_buy(&self) {
         todo!()
     }
 
-    fn sell(&self) {
+    fn spot_sell(&self) {
+        todo!()
+    }
+
+    fn futures_long(&self) {
+        todo!()
+    }
+
+    fn futures_short(&self) {
         todo!()
     }
 }

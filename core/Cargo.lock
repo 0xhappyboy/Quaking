@@ -802,9 +802,11 @@ name = "arbitrage"
 version = "0.1.0"
 dependencies = [
  "alloy",
+ "binance",
  "chainlink-data-streams-report",
  "chainlink-data-streams-sdk",
  "env_logger 0.11.8",
+ "ethers",
  "eyre",
  "hyperliquid_rust_sdk",
  "log",
@@ -1225,6 +1227,25 @@ name = "bech32"
 version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d86b93f97252c47b41663388e6d155714a9d0c398b99f1005cbc5f978b29f445"
+
+[[package]]
+name = "binance"
+version = "0.21.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "67ac330b139997be868972d54543ae2a64ac6a9b8a8a58235669e74de2c9dc23"
+dependencies = [
+ "clap",
+ "error-chain",
+ "hex",
+ "hmac",
+ "reqwest 0.11.27",
+ "serde",
+ "serde_json",
+ "sha2 0.10.9",
+ "tungstenite 0.21.0",
+ "url",
+ "uuid 1.18.1",
+]
 
 [[package]]
 name = "bincode"
@@ -1687,6 +1708,33 @@ dependencies = [
  "crypto-common",
  "inout",
 ]
+
+[[package]]
+name = "clap"
+version = "4.5.48"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e2134bb3ea021b78629caa971416385309e0131b351b25e01dc16fb54e1b5fae"
+dependencies = [
+ "clap_builder",
+]
+
+[[package]]
+name = "clap_builder"
+version = "4.5.48"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c2ba64afa3c0a6df7fa517765e31314e983f51dda798ffba27b988194fb65dc9"
+dependencies = [
+ "anstream",
+ "anstyle",
+ "clap_lex",
+ "strsim",
+]
+
+[[package]]
+name = "clap_lex"
+version = "0.7.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b94f61472cee1439c0b966b47e3aca9ae07e45d070759512cd390ea2bebc6675"
 
 [[package]]
 name = "coins-bip32"
@@ -2501,6 +2549,15 @@ checksum = "778e2ac28f6c47af28e4907f13ffd1e1ddbd400980a9abd7c8df189bf578a5ad"
 dependencies = [
  "libc",
  "windows-sys 0.60.2",
+]
+
+[[package]]
+name = "error-chain"
+version = "0.12.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2d2f06b9cac1506ece98fe3231e3cc9c4410ec3d5b1f24ae1c8946f0742cdefc"
+dependencies = [
+ "version_check",
 ]
 
 [[package]]
@@ -7142,7 +7199,7 @@ dependencies = [
  "tokio",
  "tokio-stream",
  "tokio-tungstenite",
- "tungstenite",
+ "tungstenite 0.20.1",
  "url",
 ]
 
@@ -8789,7 +8846,7 @@ dependencies = [
  "tokio",
  "tokio-native-tls",
  "tokio-rustls 0.24.1",
- "tungstenite",
+ "tungstenite 0.20.1",
  "webpki-roots 0.25.4",
 ]
 
@@ -8969,6 +9026,26 @@ dependencies = [
  "url",
  "utf-8",
  "webpki-roots 0.24.0",
+]
+
+[[package]]
+name = "tungstenite"
+version = "0.21.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ef1a641ea34f399a848dea702823bbecfb4c486f911735368f1f137cb8257e1"
+dependencies = [
+ "byteorder",
+ "bytes",
+ "data-encoding",
+ "http 1.3.1",
+ "httparse",
+ "log",
+ "native-tls",
+ "rand 0.8.5",
+ "sha1",
+ "thiserror 1.0.69",
+ "url",
+ "utf-8",
 ]
 
 [[package]]

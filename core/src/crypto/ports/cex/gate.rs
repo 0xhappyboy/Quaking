@@ -1,4 +1,5 @@
 use crate::crypto::ports::port::Port;
+use crate::crypto::types::Symbol;
 
 /// gate
 struct Gate {}
@@ -9,15 +10,22 @@ impl Gate {
     }
 }
 impl Port for Gate {
-    fn get_price(&self) {
+    fn get_price(&self, symbol: Symbol) -> f64 {
+        todo!()
+    }
+    fn spot_buy(&self) {
         todo!()
     }
 
-    fn buy(&self) {
+    fn spot_sell(&self) {
         todo!()
     }
 
-    fn sell(&self) {
+    fn futures_long(&self) {
+        todo!()
+    }
+
+    fn futures_short(&self) {
         todo!()
     }
 }

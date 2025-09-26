@@ -5,3 +5,4 @@ pub mod meteora;
 pub mod pancakeswap;
 pub mod raydium;
 pub mod uniswap;
+pub mod pumpswap;
