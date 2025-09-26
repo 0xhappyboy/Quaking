@@ -1,11 +1,11 @@
-<h2 align="center">
+<h1 align="center">
     💰 arbitrage
-</h2>
+</h1>
 <h4 align="center">
 Focus on the comprehensive development framework of financial arbitrage trading and quantitative trading.
 </h4>
 <p align="center">
-  <a href="https://github.com/0xhappyboy/arbitrage/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-d1d1f6.svg?style=flat&labelColor=1C2C2E&color=BEC5C9&logo=googledocs&label=license&logoColor=BEC5C9" alt="License"></a>
+  <a href="https://github.com/0xhappyboy/arbitrage/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL3.0-d1d1f6.svg?style=flat&labelColor=1C2C2E&color=BEC5C9&logo=googledocs&label=license&logoColor=BEC5C9" alt="License"></a>
 </p>
 <p align="center">
 <a href="./README_zh-CN.md">简体中文</a> | <a href="./README.md">English</a>
