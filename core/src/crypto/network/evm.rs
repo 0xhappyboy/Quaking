@@ -9,16 +9,12 @@ use alloy::{
 };
 use std::str::FromStr;
 
+use crate::crypto::network::abi::gas::latestAnswerCall;
+
 const ETH_USD_FEED: Address = address!("5f4eC3Df9cbd43714FE2740f5E3616155c5b8419");
 const ETH_USD_FEED_DECIMALS: u8 = 8;
 const ETH_DECIMALS: u32 = 18;
 const EVM_RPC: &str = "https://reth-ethereum.ithaca.xyz/rpc";
-
-/// smart contract function signature
-sol!(
-    #[allow(missing_docs)]
-    function latestAnswer() external view returns (int256);
-);
 
 #[derive(Clone)]
 pub struct Evm {
