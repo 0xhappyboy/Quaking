@@ -12,6 +12,7 @@ use std::str::FromStr;
 const ETH_USD_FEED: Address = address!("5f4eC3Df9cbd43714FE2740f5E3616155c5b8419");
 const ETH_USD_FEED_DECIMALS: u8 = 8;
 const ETH_DECIMALS: u32 = 18;
+const EVM_RPC: &str = "https://reth-ethereum.ithaca.xyz/rpc";
 
 /// smart contract function signature
 sol!(
@@ -40,10 +41,7 @@ pub struct Evm {
 }
 impl Evm {
     pub async fn new() -> Self {
-        let provider = ProviderBuilder::new()
-            .connect("https://reth-ethereum.ithaca.xyz/rpc")
-            .await
-            .unwrap();
+        let provider = ProviderBuilder::new().connect(EVM_RPC).await.unwrap();
         Self { provider: provider }
     }
     pub async fn get_gas_gwei(&self) -> f64 {

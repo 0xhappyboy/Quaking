@@ -34,7 +34,7 @@ impl Arbitrage {
             binance_port: None,
             hyperliquid_port: Some(Hyperliquid::new().await),
             uniswap_port: Some(UniSwap::new(net.evm.clone())),
-            network: Some(net.clone()),
+            network: Some(net),
         }
     }
     pub fn price(self) -> Price {
